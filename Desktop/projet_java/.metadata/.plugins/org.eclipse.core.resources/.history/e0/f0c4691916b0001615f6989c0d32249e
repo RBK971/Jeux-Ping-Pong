@@ -1,0 +1,33 @@
+
+import java.awt.Point;
+import javax.swing.*;
+
+public class Terrain {
+
+	int getLargeurInterface (){
+		return -1;
+   }
+	int gethauteurInterface(){
+		return -1;
+		
+	}
+	int getToucheEnfonce(){
+		return -1;
+	}
+	 Point getPostionSouris(){
+		return null;
+		
+	}
+	Balle  getBalle(){
+		return null;
+	}
+
+	 public static void main (String[] args){
+		 
+		JFrame fen = new JFrame ();
+		fen.setSize(300, 150);
+		fen.setTitle("Ping Pong");
+		fen.setVisible(true);
+	}
+ }
+

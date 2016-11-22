@@ -1,0 +1,28 @@
+
+import java.awt.Point;
+
+public class Terrain {
+
+	int getLargeurInterface (){
+		return -1;
+   }
+	int gethauteurInterface(){
+		return -1;
+		
+	}
+	int getToucheEnfonce(){
+		return -1;
+	}
+	 Point getPostionSouris(){
+		return null;
+		
+	}
+	Balle  getBalle(){
+		return null;
+	}
+ public void main (){
+	 Terrain trn = new Terrain();
+	 Raquette rqt1 = new Raquette (2,3,4,56,23,5,5,8);
+	 
+ }
+}

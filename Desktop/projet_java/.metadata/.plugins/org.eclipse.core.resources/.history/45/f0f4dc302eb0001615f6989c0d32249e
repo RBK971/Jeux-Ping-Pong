@@ -1,0 +1,83 @@
+
+import java.awt.Point;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.Color;
+import java.awt.Graphics;
+
+
+public class Terrain extends JFrame{
+
+	private JPanel page;
+	protected int largLine ;
+	protected int longLine ;
+	protected int mediane;
+
+	
+
+  /* ........Constructeur........ */
+	
+	public Terrain () {
+		
+		this.largLine = 580;
+		this.longLine = 380;
+		this.mediane =  575;
+		/* Construction de la fenetre ......*/
+		
+		setTitle("PING PONG");
+		setSize(750,500);
+		page = new JPanel();
+		page.setBackground(Color.white);
+		
+		getContentPane().add(page);
+		
+		}
+	
+		/* Rectangle */
+	public void paint(Graphics g){
+		super.paint(g);
+		g.setColor(Color.BLUE);
+		g.fillRect(50,50,600,400);
+		
+		/* lignes de la table */
+		
+		g.setColor(Color.WHITE);
+		g.drawRect (60,60,largLine,longLine);
+		//g.drawLine(350,60,350, mediane);
+		
+		g.drawLine(300, 60, 300, longLine);
+				
+	
+	}
+	
+	
+ /* .......Methodes............. */	
+	int getLargeurInterface (){
+		return -1;
+   }
+	int gethauteurInterface(){
+		return -1;
+		
+	}
+	int getToucheEnfonce(){
+		return -1;
+	}
+	 Point getPostionSouris(){
+		return null;
+		
+	}
+	Balle  getBalle(){
+		return null;
+	}
+	
+	
+ /* ........Main .......*/	
+	 public static void main (String[] args){
+		 
+		 Terrain tr = new Terrain ();
+		 tr.setVisible(true);
+		 
+		
+	}
+ }
+
