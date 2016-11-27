@@ -1,67 +1,95 @@
 
 import java.awt.Point;
+
 import javax.swing.*;
-//import java.awt.*;
-import java.awt.Color;
-import java.awt.Graphics;
+import java.awt.*;
 
 
-public class Terrain extends JFrame{
 
-	private JPanel page;
+public class Terrain  extends JFrame {
+	
+	public static Terrain fen;
+	
+	JPanel page = new JPanel();
+	
+	private JMenuBar bMenus;
+	private JMenu jeu;
+	private JMenuItem nouvelle;
+	private JPanel coordonnees;
+	
+	/* dessiné le terrain*/
 	protected int largLine ;
 	protected int longLine ;
 	protected int mediane;
 	protected int med;
-
+	protected String score;
+	
+	
 	
 
-  /* ........Constructeur........ */
+	public Terrain (){
+		setTitle ("PING PONG");
+		setSize(800,600);
+		
+		score = "0";
+		
+		page.setLayout(new BorderLayout());
+		
 	
-	public Terrain () {
 		
-		this.largLine = 580;
-		this.longLine = 380;
-		this.mediane =  440;
-		this.med = 640;
-		/* Construction de la fenetre ......*/
+		/* menu */ 
+		bMenus = new JMenuBar();
+		setJMenuBar(bMenus);
 		
-		setTitle("PING PONG");
-		setSize(750,500);
-		page = new JPanel();
-		page.setBackground(Color.white);
+		jeu = new JMenu("JEU");
+		bMenus.add(jeu);
 		
-		getContentPane().add(page);
+		nouvelle = new JMenuItem("Nouvelle partie");
+		jeu.add(nouvelle);
 		
-		}
+		/*affiche les coordonnées*/
+		coordonnees = new JPanel();
+		coordonnees.setBackground(Color.BLUE);
+		
+		/* dimmenssion des panneaux */
+		 coordonnees.setPreferredSize(new Dimension (200,58));
 	
+		 /* disposition des eléments presents */
+		 coordonnees.setLayout(new FlowLayout(FlowLayout.LEFT));
+		 
+		
+		
+		/* contruction du terrain */
+		//this.largLine = 580;
+		//this.longLine = 385;
+		this.mediane =  472;
+		this.med = 680;
+		
+		
+	}	
 		/* Rectangle */
 	public void paint(Graphics g){
 		super.paint(g);
 		g.setColor(Color.BLACK);
-		g.fillRect(50,50,600,400);
+		g.fillRect(100,100,600,400);
+		
 		
 		/* lignes de la table */
 		
 		g.setColor(Color.WHITE);
-		g.drawRect (60,60,largLine,longLine);
-		g.drawLine(350,60,350, mediane);
-		g.drawLine(60,255,med,255);
-		
-		/*raquette en forme de rectangle foctionne
-		g.setColor(Color.RED);
-		g.fillRect(100,100, 10, 100);
-		
-		/* raquette 2 
-		g.setColor(Color.RED);
-		g.fillRect(600, 300, 10, 100);
-		*/
-		
-		
-				
-	
+		//g.drawRect (60,60,largLine,longLine);
+		g.drawLine(400,120,400, mediane);
+		g.drawLine(120,120,med,120);
+		g.drawLine(120,470,med,470);
+		g.drawString(score,350, 150);
+		g.drawString(score,450,150);
 	}
+
+		
+		
+
 	
+
 	
  /* .......Methodes............. */	
 	int getLargeurInterface (){
@@ -82,16 +110,17 @@ public class Terrain extends JFrame{
 		return null;
 	}
 	
-	
- /* ........Main .......*/	
-	 public static void main (String[] args){
-		 
-		 Terrain tr = new Terrain ();
-		 tr.setVisible(true);
-		 
-		 Raquette_Souris rs = new Raquette_Souris(100,100,10,10,0,20,100,10);
-		 rs.deplacer(tr);
+	public void afiiche (Terrain score){
 		
 	}
+	
+	
+	public static void main(String[] args) {
+		fen = new Terrain();
+		fen.setVisible(true);
+		
+
  }
+}
+
 

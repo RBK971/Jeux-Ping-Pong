@@ -33,9 +33,13 @@ public class Raquette extends ElementDeJeux {
 		
 	}
 	
-	public boolean collision (Balle b) {
+	/*public boolean collision (Balle b) {
+	 if ( getLargeur() > b.getX() && getLargeur () < b.getX() + b.getVx()){
+		 if (getHauteur() > b.getY()&& getHauteur () < b.getY() + b.getVy()){
+			 
+		 }
+	 }
 		
 		
-		return true;
-	}
+	}*/
 }
